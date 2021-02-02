@@ -1,12 +1,15 @@
 package br.senai.sp.jandira.model;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Cliente {
 	
 	private String nome;
 	private double peso;
 	private double altura;
-	private int idade;
-	private String genero;
+	private char sexo;
+	private LocalDate dataNascimento;
 	private String nivelDeAtividade;
 	
 	
@@ -31,37 +34,25 @@ public class Cliente {
 		return this.altura;
 	}
 	
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
+	
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+	
+	// *** obter idade
 	public int getIdade() {
-		return this.idade;
+		LocalDate hoje = LocalDate.now();
+		Period periodo = Period.between(this.dataNascimento, hoje);
+		return periodo.getYears();
 	}
 	
-	public void setGenero(String genero) {
-		if (genero.contentEquals("Masculino") || genero.equals("Feminino")) {
-			this.genero = genero;
-		}
-		else {
-			System.out.println("O genero deve ser: Masculino ou Feminino");
-		}
-	}
-	public String getGenero() {
-		return this.genero;
+	public double getImc() {
+		return this.peso / (this.altura * this.altura);
 	}
 	
-	public void setNivelDeAtividade(String nivelDeAtividade) {
-		if(nivelDeAtividade.contentEquals("leve") || nivelDeAtividade.equals("moderada")) {
-			this.nivelDeAtividade = nivelDeAtividade;
-		}
-		else {
-			if(nivelDeAtividade.equals("intensa")) {
-				this.nivelDeAtividade = nivelDeAtividade;
-			}
-			else {
-				System.out.println("O nivel de atividade deve ser igual: leve, moderada ou intensa");
-			}
-		}
-	}
+	public String statusImc
 }
 
