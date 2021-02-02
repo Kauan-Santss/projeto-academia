@@ -8,11 +8,11 @@ public class Cliente {
 	private String nome;
 	private double peso;
 	private double altura;
-	private char sexo;
+	private String sexo;
 	private LocalDate dataNascimento;
 	private String nivelDeAtividade;
 	
-	
+	// Nome
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -20,6 +20,7 @@ public class Cliente {
 		return this.nome;
 	}
 	
+	// Peso
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
@@ -27,13 +28,28 @@ public class Cliente {
 		return this.peso;
 	}
 	
+	// Altura
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
 	public double getAltura() {
 		return this.altura;
 	}
+
+	// Sexo
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getSexo() {
+		if (sexo.contentEquals ("Masculino") || sexo.equals("Feminino")) {
+			return this.sexo =sexo;
+		}
+		else {
+			return "O Sexo deve ser ( Masculino ou Feminino )";
+		}
+	}
 	
+	// Idade
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
@@ -52,7 +68,21 @@ public class Cliente {
 	public double getImc() {
 		return this.peso / (this.altura * this.altura);
 	}
-	
-	public String statusImc
+	public String statusImc() {
+		if (this.getImc() <= 18.5) {
+			return "Abaixo do Peso";
+		}else if (this.getImc() > 18.5 && this.getImc() <= 24.9) {
+			return "Peso Ideal (Parabens)";
+		}else if (this.getImc() > 24.9 && this.getImc() <= 29.9) {
+			return "Levemente acima do peso";
+		}else if (this.getImc() > 29.9 && this.getImc() <= 34.9) {
+			return "Obesidade grau I";
+		}else if (this.getImc() > 34.9 && this.getImc() <= 39.9) {
+			return "Obesidade grau II";
+		}else {
+			return "Obesidade III (mórbida)";
+		}
+	}
+
 }
 
