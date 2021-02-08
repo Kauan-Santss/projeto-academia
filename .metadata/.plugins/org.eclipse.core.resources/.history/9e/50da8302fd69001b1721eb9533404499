@@ -1,0 +1,26 @@
+package br.senai.sp.jandira;
+
+import java.time.LocalDate;
+
+import br.senai.sp.jandira.model.Cliente;
+
+public class App {
+
+	public static void main(String[] args) {
+		Cliente ana = new Cliente();
+		ana.setNome("Ana Paula");
+		ana.setDataNascimento(LocalDate.of(1998, 6, 23));
+		ana.setPeso(63);
+		ana.setAltura(1.69);
+		ana.setSexo("Feminino");
+		
+		System.out.println("Nome: " + ana.getNome());
+		System.out.println("Idade: " + ana.getIdade());
+		System.out.println("Sexo: " + ana.getSexo());
+		System.out.println("Peso: " + ana.getPeso() + "Kg");
+		System.out.println("Altura: " + ana.getAltura() + "m");
+		System.out.println("IMC: " + ana.getImc());
+		System.out.println("Status do IMC: " + ana.statusImc());
+	}
+
+}

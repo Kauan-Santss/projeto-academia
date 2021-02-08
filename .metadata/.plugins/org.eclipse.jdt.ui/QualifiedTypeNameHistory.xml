@@ -3,4 +3,8 @@
 <fullyQualifiedTypeName name="java.time.Period"/>
 <fullyQualifiedTypeName name="br.senai.sp.jandira.model.Cliente"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="br.senai.sp.jandira.gui.FrameCalculadoraNcdImc"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
 </qualifiedTypeNameHistroy>

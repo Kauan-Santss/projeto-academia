@@ -42,7 +42,7 @@ public class Cliente {
 	}
 	public String getSexo() {
 		if (sexo.contentEquals ("Masculino") || sexo.equals("Feminino")) {
-			return this.sexo =sexo;
+			return this.sexo;
 		}
 		else {
 			return "O Sexo deve ser ( Masculino ou Feminino )";
@@ -58,13 +58,30 @@ public class Cliente {
 		return dataNascimento;
 	}
 	
-	// *** obter idade
+	// *** Obter idade
 	public int getIdade() {
 		LocalDate hoje = LocalDate.now();
 		Period periodo = Period.between(this.dataNascimento, hoje);
 		return periodo.getYears();
 	}
 	
+	// *** Nivel de atividade
+	public void setNivelDeAtividade(String nivelDeAtividade) {
+		this.nivelDeAtividade = nivelDeAtividade;
+	}
+	public String getNivelDeAtividade() {
+		if (nivelDeAtividade.contentEquals ("Leve") || nivelDeAtividade.equals("Moderada")) {
+			return this.nivelDeAtividade;
+		}
+		else if (nivelDeAtividade == "Pesada") {
+			return this.nivelDeAtividade;
+		}
+		else {
+			return "O nivel de Atividade tem que ser (Leve, Moderada ou Pesada)";
+		}
+	}
+	
+	// *** IMC
 	public double getImc() {
 		return this.peso / (this.altura * this.altura);
 	}
@@ -82,6 +99,51 @@ public class Cliente {
 		}else {
 			return "Obesidade III (mórbida)";
 		}
+	}
+	
+	// *** NCD
+	public double getCalculoGastoCalorico() {
+		if (this.sexo == "Masculino") {
+			if (getIdade() > 17 && getIdade() < 31) {
+				return 15.3 * this.peso + 679;
+			}else if (getIdade() >= 31 && getIdade() <= 60) {
+				return 11.6 * this.peso + 879;
+			}if (getIdade() > 60) {
+				return 13.5 * this.peso + 487;
+			}
+		}else if (this.sexo == "Feminino") {
+			if(getIdade() > 17 && getIdade() < 31) {
+				return 14.7 * this.peso + 496;
+			}
+			else if(getIdade() >= 31 && getIdade() <= 60) {
+				return 8.7 * this.peso + 829;
+			}
+			if (getIdade() > 60) {
+				return 10.5 * this.peso + 596;
+			}
+		}
+		return getCalculoGastoCalorico();
+	}
+	
+	public double getNcd() {
+		if (this.sexo == "Masculino") {
+			if(getNivelDeAtividade() == "Leve") {
+				return getCalculoGastoCalorico() * 1.5;
+			}else if (getNivelDeAtividade() == "Moderada") {
+				return getCalculoGastoCalorico() * 1.8;
+			}else {
+				return getCalculoGastoCalorico() * 2.1;
+			}
+		}else if (this.sexo == "Feminino") {
+			if(getNivelDeAtividade() == "Leve") {
+				return getCalculoGastoCalorico() * 1.6;
+			}else if (getNivelDeAtividade() == "Moderada") {
+				return getCalculoGastoCalorico() * 1.6;
+			}else {
+				return getCalculoGastoCalorico() * 1.8;
+			}
+		}
+		return getNcd();
 	}
 
 }

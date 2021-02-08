@@ -1,0 +1,29 @@
+package br.senai.sp.jandira.gui;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class FrameCalculadoraNcdImc {
+	
+
+	public void criarTela() {
+		JFrame telaCliente = new JFrame();
+		telaCliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		telaCliente.setSize(500, 300);
+		telaCliente.setTitle("Calculos com retângulo");
+		telaCliente.setLayout(null);
+		telaCliente.setLocationRelativeTo(null);
+		
+		// *** Criar um Label e textField da Altura
+		JLabel labelAltura = new JLabel();
+		labelAltura.setText("Altura:");
+		// *** Definir a posição e tamango do label (x, y, width, height)
+		labelAltura.setBounds(10, 10, 80, 30);
+		JTextField textAltura = new JTextField();
+		textAltura.setBounds(50, 10, 100, 30);
+		
+		telaCliente.setVisible(true);
+	}
+}
+
