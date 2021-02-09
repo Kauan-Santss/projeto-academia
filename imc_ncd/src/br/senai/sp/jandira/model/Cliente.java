@@ -102,7 +102,7 @@ public class Cliente {
 	}
 	
 	// *** NCD
-	public double getCalculoGastoCalorico() {
+	public double getGastoCalorico() {
 		if (this.sexo == "Masculino") {
 			if (getIdade() > 17 && getIdade() < 31) {
 				return 15.3 * this.peso + 679;
@@ -122,25 +122,25 @@ public class Cliente {
 				return 10.5 * this.peso + 596;
 			}
 		}
-		return getCalculoGastoCalorico();
+		return getGastoCalorico();
 	}
 	
 	public double getNcd() {
 		if (this.sexo == "Masculino") {
 			if(getNivelDeAtividade() == "Leve") {
-				return getCalculoGastoCalorico() * 1.5;
+				return getGastoCalorico() * 1.5;
 			}else if (getNivelDeAtividade() == "Moderada") {
-				return getCalculoGastoCalorico() * 1.8;
+				return getGastoCalorico() * 1.8;
 			}else {
-				return getCalculoGastoCalorico() * 2.1;
+				return getGastoCalorico() * 2.1;
 			}
 		}else if (this.sexo == "Feminino") {
 			if(getNivelDeAtividade() == "Leve") {
-				return getCalculoGastoCalorico() * 1.6;
+				return getGastoCalorico() * 1.6;
 			}else if (getNivelDeAtividade() == "Moderada") {
-				return getCalculoGastoCalorico() * 1.6;
+				return getGastoCalorico() * 1.6;
 			}else {
-				return getCalculoGastoCalorico() * 1.8;
+				return getGastoCalorico() * 1.8;
 			}
 		}
 		return getNcd();
