@@ -1,7 +1,7 @@
 package br.senai.sp.jandira.model;
 
-import java.time.LocalDate;
-import java.time.Period;
+//import java.time.LocalDate;
+//import java.time.Period;
 
 public class Cliente {
 	
@@ -9,7 +9,8 @@ public class Cliente {
 	private double peso;
 	private double altura;
 	private String sexo;
-	private LocalDate dataNascimento;
+	private int idade;
+//	private LocalDate dataNascimento;
 	private String nivelDeAtividade;
 	
 	// Nome
@@ -50,20 +51,26 @@ public class Cliente {
 	}
 	
 	// Idade
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-	
-	// *** Obter idade
 	public int getIdade() {
-		LocalDate hoje = LocalDate.now();
-		Period periodo = Period.between(this.dataNascimento, hoje);
-		return periodo.getYears();
+		return this.idade;
 	}
+//	public void setDataNascimento(LocalDate dataNascimento) {
+//	this.dataNascimento = dataNascimento;
+//}
+//
+//public LocalDate getDataNascimento() {
+//	return dataNascimento;
+//}
+//
+//// *** Obter idade
+//public int getIdade() {
+//	LocalDate hoje = LocalDate.now();
+//	Period periodo = Period.between(this.dataNascimento, hoje);
+//	return periodo.getYears();
 	
 	// *** Nivel de atividade
 	public void setNivelDeAtividade(String nivelDeAtividade) {
