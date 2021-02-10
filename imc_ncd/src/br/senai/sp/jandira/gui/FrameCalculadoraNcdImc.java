@@ -126,7 +126,7 @@ public class FrameCalculadoraNcdImc {
 				c1.setAltura(Double.parseDouble(textAltura.getText()));
 				c1.setSexo(String.valueOf(radioMasculino.isSelected()?"Masculino":"Feminino"));
 				c1.setIdade(Integer.parseInt(textIdade.getText()));
-				c1.setNivelDeAtividade(String.valueOf(comboNivelDeAtividade.getSelectedItem()));
+				c1.setNivelDeAtividade(String.valueOf(comboNivelDeAtividade.getSelectedItem().toString()));
 				
 				labelImc.setText("IMC: " + String.valueOf(c1.getImc()));
 				labelStatusImc.setText("Status IMC - " + c1.statusImc());
