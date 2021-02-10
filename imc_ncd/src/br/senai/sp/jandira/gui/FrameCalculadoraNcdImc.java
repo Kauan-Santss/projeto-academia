@@ -40,29 +40,33 @@ public class FrameCalculadoraNcdImc {
 		JTextField textIdade = new JTextField();
 		textIdade.setBounds(10, 110, 50, 30);
 		
+		
+		// *** JRadioButton e ButtonGroup (Feminino e Masculino)
 		JRadioButton radioMasculino = new JRadioButton();
 		radioMasculino.setText("Masculino");
 		radioMasculino.setBounds(10, 150, 120, 30);
 		JRadioButton radioFeminino = new JRadioButton();
 		radioFeminino.setText("Feminino");
 		radioFeminino.setBounds(130, 150, 120, 30);
-		
 		ButtonGroup buttonGroup = new ButtonGroup();
 		buttonGroup.add(radioMasculino);
 		buttonGroup.add(radioFeminino);
 		
+		// *** label e textField Altura
 		JLabel labelAltura = new JLabel();
 		labelAltura.setText("Altura");
 		labelAltura.setBounds(10, 200, 50, 30);
 		JTextField textAltura = new JTextField();
 		textAltura.setBounds(10, 225, 40, 30);
 		
+		// *** label e textField Peso
 		JLabel labelPeso = new JLabel();
 		labelPeso.setText("Peso(Kg)");
 		labelPeso.setBounds(60, 200, 70, 30);
 		JTextField textPeso = new JTextField();
 		textPeso.setBounds(60, 225, 55, 30);
 		
+		// *** ComboBox
 		JLabel labelNivelDeAtividade = new JLabel();
 		labelNivelDeAtividade.setText("Nivel de Atividade");
 		labelNivelDeAtividade.setBounds(10, 260, 100, 30);
@@ -88,6 +92,7 @@ public class FrameCalculadoraNcdImc {
 		labelNcd.setText("NCD:");
 		labelNcd.setBounds(220, 80, 180, 30);
 		
+		// *** botão calcular
 		JButton buttonCalcular = new JButton();
 		buttonCalcular.setText("Calcular");
 		Color verde = new Color(50,205,50);
@@ -115,7 +120,7 @@ public class FrameCalculadoraNcdImc {
 
 		telaCliente.setVisible(true);
 		
-		
+		// *** Ação do botão calcular
 		buttonCalcular.addActionListener(new ActionListener() {
 			
 			@Override
